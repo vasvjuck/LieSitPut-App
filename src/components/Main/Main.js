@@ -5,11 +5,17 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Items, MenuItems } from '../../Data.js'
 import MenuItem from '../MenuItem';
 import ItemList from '../ItemList';
+import Filter from '../Filter';
+
 
 
 const Main = () => {
     const [menu, setMenu] = useState(MenuItems)
     const [items, setItems] = useState(Items.filter((element) => element.itemId == "bed01"))
+    const [selectedSort, setSelectedSort] = useState('')
+    const [inputValue, setInputValue] = useState('')
+    const [filterValue, setFilterValue] = useState('')
+    const [currentMenu, setCurrentMenu] = useState('bed01')
 
     useEffect(() => {
         const menuCard = document
@@ -22,13 +28,26 @@ const Main = () => {
         }
 
         menuCard.forEach((n) => n.addEventListener("click", setMenuCardActive));
-    }, [])
+    }, [items])
 
     const setData = (itemId) => {
         setItems(Items.filter((element) => element.itemId == itemId));
+        setCurrentMenu(itemId)
     };
 
-    console.log(items)
+    const sortData = (e) => {
+        setFilterValue(e.target.value)
+        console.log(filterValue)
+    }
+
+    useEffect(() => {
+        const element = items.filter(el => el.name.toLowerCase().includes(inputValue.trim().toLowerCase()))
+        setItems(element)
+        if (inputValue === '') {
+            setData(currentMenu)
+        }
+    }, [inputValue])
+
     return (
         <main>
             <div className='main__title'>
@@ -40,16 +59,24 @@ const Main = () => {
                 <div className='search'>
                     <div className='inputBar'>
                         <SearchIcon />
-                        <input placeholder='Search furniture' />
+                        <input
+                            value={inputValue}
+                            onChange={(e) => { setInputValue(e.target.value) }}
+                            placeholder='Search furniture'
+                        />
                     </div>
-                    <button className='btn'>Apply</button>
+                    {/* <button className='btn'>Apply</button> */}
                 </div>
                 <div className='filterBar'>
-                    <select className='filter'>
-                        <option className='optional' value="">Filter by:</option>
-                        <option className='optional' value="">From cheaper to expensive</option>
-                        <option className='optional' value="">From expensive to cheaper</option>
-                        <option className='optional' value="">By quality</option>
+                    <select
+                        className='filter'
+                        value={filterValue}
+                        onChange={sortData}
+                    >
+                        <option disabled>Filter by:</option>
+                        <option value="expensive">From expensive to cheaper</option>
+                        <option value="cheap">From cheap to expensive</option>
+                        <option value="quality">By quality</option>
                     </select>
                 </div>
             </div>
