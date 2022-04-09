@@ -5,13 +5,15 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Items, MenuItems } from '../../Data.js'
 import MenuItem from '../MenuItem';
 import ItemList from '../ItemList';
-import Filter from '../Filter';
+import { useSelector } from 'react-redux';
 
 
 
 const Main = () => {
-    const [menu, setMenu] = useState(MenuItems)
-    const [items, setItems] = useState(Items.filter((element) => element.itemId == "bed01"))
+    const userData = useSelector(state => state.user.userData)
+
+    const [menu] = useState(MenuItems)
+    const [items, setItems] = useState(Items.filter((element) => element.itemId === "bed01"))
     const [inputValue, setInputValue] = useState('')
     const [filterValue, setFilterValue] = useState('')
     const [currentMenu, setCurrentMenu] = useState('bed01')
@@ -30,7 +32,7 @@ const Main = () => {
     }, [items])
 
     const setData = (itemId) => {
-        setItems(Items.filter((element) => element.itemId == itemId));
+        setItems(Items.filter((element) => element.itemId === itemId));
         setCurrentMenu(itemId)
     };
 
@@ -48,7 +50,6 @@ const Main = () => {
                 }
             }
         }
-
     }
 
     useEffect(() => {
@@ -59,13 +60,16 @@ const Main = () => {
         }
     }, [inputValue])
 
-    console.log(filterValue)
+    console.log(userData)
 
     return (
         <main>
             <div className='main__title'>
                 <SquareIcon />
-                <h2>Best Furniture for your house</h2>
+                <div className='content'>
+                    <h2>Welcome {userData.username}!</h2>
+                    <p>Your role: {userData.role}</p>
+                </div>
                 <SquareIcon />
             </div>
             <div className='form'>
@@ -96,11 +100,11 @@ const Main = () => {
             <div className='list'>
                 {
                     menu && menu.map((data) => (
-                        <div className='list__content' onClick={() => setData(data.itemId)}>
+                        <div className='list__content' onClick={() => setData(data.itemId)} key={data.id}>
                             <MenuItem
                                 data={data}
                                 key={data.id}
-                                isActive={data.id == "1" ? true : false}
+                                isActive={data.id === "1" ? true : false}
                             />
                         </div>))
                 }
@@ -108,7 +112,7 @@ const Main = () => {
             <div className='mainList'>
                 {
                     items && items.map((data) => (
-                        <ItemList data={data} key={data.id} />
+                        <ItemList userData={userData} data={data} key={data.id} />
                     ))
                 }
             </div>

@@ -39,7 +39,7 @@ app.post('/api/login', async (req, res) => {
             password: user.password
         }, 'www123')
 
-        return res.json({ status: 'ok', user: token, role: user.role, username: user.username })
+        return res.json({ status: 'ok', jwt: token, role: user.role, username: user.username })
     } else {
         return res.json({ status: 'error', user: false })
     }

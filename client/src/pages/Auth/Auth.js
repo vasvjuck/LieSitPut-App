@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { UserAction } from '../../store/reducer/addUserReducer'
 
-const Auth = ({ user }) => {
+const Auth = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch()
     const [username, setUserName] = useState('')

@@ -1,3 +1,4 @@
+import { React } from 'react'
 import './App.scss';
 import Header from './components/Header/Header';
 import CartPage from './pages/CartPage';
@@ -9,6 +10,7 @@ import SignUp from './pages/Auth/SignUp';
 
 
 function App() {
+
   return (
     <div className="App">
       <Header />
