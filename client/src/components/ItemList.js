@@ -1,6 +1,7 @@
 import React from 'react';
 import StarIcon from '@mui/icons-material/Star';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+import AddIcon from '@mui/icons-material/Add';
 
 const ItemList = ({ data }) => {
     return (
@@ -10,6 +11,9 @@ const ItemList = ({ data }) => {
             <div className='quality'>
                 <StarIcon /><span>{data.ratings}</span>
                 <MonetizationOnIcon /><span>{data.price}</span>
+                <div className='add'>
+                    <AddIcon className='one' />
+                </div>
             </div>
         </div>
     )

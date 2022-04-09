@@ -38,7 +38,7 @@ const Items = [
         imgSrc: "https://pngimg.com/uploads/bed/bed_PNG17424.png",
         name: "Modern Bed",
         ratings: 5,
-        price: "7.5",
+        price: 7.5,
     },
     {
         id: 2,
@@ -46,7 +46,7 @@ const Items = [
         imgSrc: "https://pngimg.com/uploads/bed/bed_PNG17410.png",
         name: "Black Bed",
         ratings: 5,
-        price: "122.4",
+        price: 22.4,
     },
     {
         id: 3,
@@ -54,7 +54,7 @@ const Items = [
         imgSrc: "https://pngimg.com/uploads/bed/bed_PNG17408.png",
         name: "Modern Bed 1",
         ratings: 5,
-        price: "245.1",
+        price: 245.1,
     },
     {
         id: 4,
@@ -62,7 +62,7 @@ const Items = [
         imgSrc: "https://pngimg.com/uploads/bed/bed_PNG17404.png",
         name: "Modern Bed 2",
         ratings: 5,
-        price: "1233.4",
+        price: 1233.4,
     },
     {
         id: 5,
@@ -70,7 +70,7 @@ const Items = [
         imgSrc: "https://pngimg.com/uploads/bed/bed_PNG17391.png",
         name: "Gold Bed",
         ratings: 5,
-        price: "1223.5",
+        price: 1223.5,
     },
     {
         id: 6,
@@ -78,7 +78,7 @@ const Items = [
         imgSrc: "https://pngimg.com/uploads/bed/bed_PNG17376.png",
         name: "White Bed",
         ratings: 5,
-        price: "12",
+        price: 12,
     },
     {
         id: 31,
@@ -86,7 +86,7 @@ const Items = [
         imgSrc: "https://pngimg.com/uploads/bed/bed_PNG17376.png",
         name: "White Bed",
         ratings: 5,
-        price: "12",
+        price: 12,
     },
     {
         id: 32,
@@ -94,7 +94,7 @@ const Items = [
         imgSrc: "https://pngimg.com/uploads/bed/bed_PNG17376.png",
         name: "White Bed",
         ratings: 5,
-        price: "12",
+        price: 12,
     },
     {
         id: 7,

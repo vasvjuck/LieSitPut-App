@@ -12,7 +12,6 @@ import Filter from '../Filter';
 const Main = () => {
     const [menu, setMenu] = useState(MenuItems)
     const [items, setItems] = useState(Items.filter((element) => element.itemId == "bed01"))
-    const [selectedSort, setSelectedSort] = useState('')
     const [inputValue, setInputValue] = useState('')
     const [filterValue, setFilterValue] = useState('')
     const [currentMenu, setCurrentMenu] = useState('bed01')
@@ -36,8 +35,10 @@ const Main = () => {
     };
 
     const sortData = (e) => {
+
         setFilterValue(e.target.value)
-        console.log(filterValue)
+        setItems(items.sort((l, r) => l[filterValue] - r[filterValue]))
+
     }
 
     useEffect(() => {
@@ -47,6 +48,8 @@ const Main = () => {
             setData(currentMenu)
         }
     }, [inputValue])
+
+    console.log(filterValue)
 
     return (
         <main>
@@ -73,9 +76,9 @@ const Main = () => {
                         value={filterValue}
                         onChange={sortData}
                     >
-                        <option disabled>Filter by:</option>
-                        <option value="expensive">From expensive to cheaper</option>
-                        <option value="cheap">From cheap to expensive</option>
+                        <option >Filter by:</option>
+                        <option value="price">From expensive to cheaper</option>
+                        <option value="ratings">From cheap to expensive</option>
                         <option value="quality">By quality</option>
                     </select>
                 </div>

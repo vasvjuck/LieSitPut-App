@@ -181,12 +181,26 @@ main {
                     &:nth-child(1) {
                         color: yellow;
                     }
+
                 }
 
                 span {
                     margin-right: 25px;
                     margin-left: 10px;
                     font-size: 16px;
+                }
+            }
+
+            .add {
+                position: absolute;
+                bottom: 10px;
+                right: 7px;
+                background-color: #000;
+                border-radius: 50%;
+                cursor: pointer;
+
+                .MuiSvgIcon-root.one {
+                    color: #fff;
                 }
             }
         }
