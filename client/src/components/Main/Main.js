@@ -16,7 +16,7 @@ const Main = () => {
     const dispatch = useDispatch()
 
     const [menu] = useState(MenuItems)
-    const [items, setItems] = useState(goods.filter((element) => element.itemId === "bed01"))
+    const [items, setItems] = useState(goods.filter((element) => element.itemId === 'bed01'))
     const [inputValue, setInputValue] = useState('')
     const [filterValue, setFilterValue] = useState('')
     const [currentMenu, setCurrentMenu] = useState('bed01')
@@ -59,6 +59,7 @@ const Main = () => {
 
     useEffect(() => {
         fetchGoods()
+        console.log(items)
     }, [])
 
     useEffect(() => {
@@ -133,9 +134,9 @@ const Main = () => {
             </div>
             <div className='mainList'>
                 {
-                    items && items.map((data) => (
+                    items.length ? items.map((data) => (
                         <ItemList userData={userData} data={data} key={data.id} />
-                    ))
+                    )) : (<h2>Please, choose a category</h2>)
                 }
             </div>
         </main>

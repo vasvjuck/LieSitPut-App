@@ -1,0 +1,42 @@
+.edit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .edit__right {
+        flex: 50%;
+        margin-right: 205px;
+        background-color: #fff;
+        border-radius: 24px;
+        padding: 45px;
+
+        img {
+            width: 500px;
+            height: 400px;
+        }
+
+        .right__content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 25px;
+
+            h3 {
+                font-size: 18px;
+                text-transform: uppercase;
+            }
+
+            .rating {
+                display: flex;
+                align-items: center;
+                font-size: 18px;
+                margin-top: 20px;
+
+                span {
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+}
