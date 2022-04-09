@@ -35,9 +35,19 @@ const Main = () => {
     };
 
     const sortData = (e) => {
-
         setFilterValue(e.target.value)
-        setItems(items.sort((l, r) => l[filterValue] - r[filterValue]))
+
+        if (e.target.value === 'expensive') {
+            setItems(items.sort((l, r) => r.price - l.price))
+        } else {
+            if (e.target.value === 'cheaper') {
+                setItems(items.sort((l, r) => l.price - r.price))
+            } else {
+                if (e.target.value === 'quality') {
+                    setItems(items.sort((l, r) => r.ratings - l.ratings))
+                }
+            }
+        }
 
     }
 
@@ -77,8 +87,8 @@ const Main = () => {
                         onChange={sortData}
                     >
                         <option >Filter by:</option>
-                        <option value="price">From expensive to cheaper</option>
-                        <option value="ratings">From cheap to expensive</option>
+                        <option value="expensive">From expensive to cheaper</option>
+                        <option value="cheaper">From cheap to expensive</option>
                         <option value="quality">By quality</option>
                     </select>
                 </div>

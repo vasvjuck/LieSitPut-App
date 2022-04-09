@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './Auth.scss';
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { UserAction } from '../../store/reducer/addUserReducer'
 
-const Auth = () => {
+const Auth = ({ user }) => {
     const navigate = useNavigate();
-
+    const dispatch = useDispatch()
     const [username, setUserName] = useState('')
     const [password, setPassword] = useState('')
     const [valid, setValid] = useState(false)
@@ -25,6 +27,8 @@ const Auth = () => {
                 })
             })
             const data = await response.json()
+
+            dispatch({ type: UserAction.type, payload: data })
 
             if (data.status === 'ok') {
                 navigate('/home')
