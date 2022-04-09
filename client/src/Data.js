@@ -78,7 +78,7 @@ const Items = [
         imgSrc: "https://pngimg.com/uploads/bed/bed_PNG17376.png",
         name: "White Bed",
         ratings: '2',
-        price: 12,
+        price: 54,
     },
     {
         id: 31,
@@ -86,7 +86,7 @@ const Items = [
         imgSrc: "https://pngimg.com/uploads/bed/bed_PNG17376.png",
         name: "White Bed",
         ratings: '4',
-        price: 12,
+        price: 112,
     },
     {
         id: 32,
@@ -94,7 +94,7 @@ const Items = [
         imgSrc: "https://pngimg.com/uploads/bed/bed_PNG17376.png",
         name: "White Bed",
         ratings: '3',
-        price: 12,
+        price: 162,
     },
     {
         id: 7,
@@ -102,7 +102,7 @@ const Items = [
         imgSrc: "https://pngimg.com/uploads/sofa/sofa_PNG6966.png",
         name: "Black Modern Sofa",
         ratings: 5,
-        price: "12",
+        price: 98,
     },
     {
         id: 8,
@@ -110,7 +110,7 @@ const Items = [
         imgSrc: "https://pngimg.com/uploads/sofa/sofa_PNG6964.png",
         name: "Green Sofa",
         ratings: 5,
-        price: "12",
+        price: 93,
     },
     {
         id: 9,
@@ -118,7 +118,7 @@ const Items = [
         imgSrc: "https://pngimg.com/uploads/sofa/sofa_PNG6956.png",
         name: "Modern Black Sofa",
         ratings: 5,
-        price: "12",
+        price: 32.2,
     },
     {
         id: 10,

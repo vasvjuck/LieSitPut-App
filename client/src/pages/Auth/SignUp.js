@@ -15,24 +15,28 @@ const SignUp = () => {
     const addUser = async (e) => {
         e.preventDefault()
 
-        const response = await fetch('http://localhost:3001/api/register', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                username,
-                password,
-                role
-            })
-        })
-        const data = await response.json()
-        if (data.status === 'ok') {
-            navigate('/login')
-            setValid(true)
+        if (username === '' || password === '') {
+            alert('Please enter data...')
         } else {
-            alert(data.error)
+            const response = await fetch('http://localhost:3001/api/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username,
+                    password,
+                    role
+                })
+            })
+            const data = await response.json()
+            if (data.status === 'ok') {
+                navigate('/login')
+                setValid(true)
+            } else {
+                alert(data.error)
 
+            }
         }
     }
 
@@ -61,6 +65,7 @@ const SignUp = () => {
             <div className='content'>
                 <p>Admin/User</p>
                 <select
+                    className='filter'
                     value={role}
                     onChange={(e) => setRole(e.target.value)}
                     placeholder='Enter your role...'

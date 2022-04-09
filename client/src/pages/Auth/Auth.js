@@ -9,7 +9,6 @@ const Auth = () => {
     const dispatch = useDispatch()
     const [username, setUserName] = useState('')
     const [password, setPassword] = useState('')
-    const [valid, setValid] = useState(false)
 
     const loginUser = async (e) => {
         e.preventDefault()
@@ -28,14 +27,11 @@ const Auth = () => {
             })
             const data = await response.json()
 
-            dispatch({ type: UserAction.type, payload: data })
-
-            if (data.status === 'ok') {
+            if (password === data.password) {
+                dispatch({ type: UserAction.type, payload: data });
                 navigate('/home')
-                setValid(true)
             } else {
-                alert('Please enter correct data')
-                setValid(false)
+                alert('Please enter correct data...')
             }
         }
     }
@@ -53,11 +49,12 @@ const Auth = () => {
             <div className='content'>
                 <p>Password</p>
                 <input
+                    type='password'
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder='Enter your password...' />
             </div>
-            <button onClick={loginUser} disabled={valid} type='submit'>Login</button>
+            <button onClick={loginUser} type='submit'>Login</button>
         </form>
     )
 }

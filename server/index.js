@@ -1,9 +1,9 @@
-
 const express = require('express')
 const app = express()
 const cors = require('cors')
 const mongoose = require('mongoose')
 const User = require('./models/user.model')
+const Goods = require('./models/goods.model')
 const jwt = require('jsonwebtoken')
 
 app.use(cors())
@@ -34,13 +34,21 @@ app.post('/api/login', async (req, res) => {
     })
 
     if (user) {
-
         const token = jwt.sign({
             password: user.password
         }, 'www123')
 
-        return res.json({ status: 'ok', jwt: token, role: user.role, username: user.username })
+        return res.json({ status: 'ok', jwt: token, role: user.role, username: user.username, password: user.password })
     } else {
+        return res.json({ status: 'error', user: false })
+    }
+})
+
+app.get('/api/allGoods', async (req, res) => {
+    try {
+        const goods = await Goods.find()
+        return res.json(goods)
+    } catch (error) {
         return res.json({ status: 'error', user: false })
     }
 })

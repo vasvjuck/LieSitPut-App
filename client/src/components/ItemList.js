@@ -1,8 +1,6 @@
 import React from 'react';
 import StarIcon from '@mui/icons-material/Star';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
-import AddIcon from '@mui/icons-material/Add';
-
 
 
 const ItemList = ({ userData, data }) => {
@@ -16,9 +14,6 @@ const ItemList = ({ userData, data }) => {
                 {
                     userData.role === 'Admin' ? (<div ><button className='edit'>Edit</button>  </div>) : ('')
                 }
-                <div className='add'>
-                    <AddIcon className='one' />
-                </div>
             </div>
         </div>
     )

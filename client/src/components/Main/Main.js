@@ -2,37 +2,27 @@ import React, { useState, useEffect } from 'react';
 import './Main.scss';
 import SquareIcon from '@mui/icons-material/Square';
 import SearchIcon from '@mui/icons-material/Search';
-import { Items, MenuItems } from '../../Data.js'
+import { MenuItems } from '../../Data.js'
 import MenuItem from '../MenuItem';
 import ItemList from '../ItemList';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { GoodsAction } from '../../store/reducer/allGoods'
 
 
 
 const Main = () => {
     const userData = useSelector(state => state.user.userData)
+    const goods = useSelector(state => state.goods.goods)
+    const dispatch = useDispatch()
 
     const [menu] = useState(MenuItems)
-    const [items, setItems] = useState(Items.filter((element) => element.itemId === "bed01"))
+    const [items, setItems] = useState(goods.filter((element) => element.itemId === "bed01"))
     const [inputValue, setInputValue] = useState('')
     const [filterValue, setFilterValue] = useState('')
     const [currentMenu, setCurrentMenu] = useState('bed01')
 
-    useEffect(() => {
-        const menuCard = document
-            .querySelector(".list")
-            .querySelectorAll(".list__item");
-
-        function setMenuCardActive() {
-            menuCard.forEach((n) => n.classList.remove("active"));
-            this.classList.add("active");
-        }
-
-        menuCard.forEach((n) => n.addEventListener("click", setMenuCardActive));
-    }, [items])
-
     const setData = (itemId) => {
-        setItems(Items.filter((element) => element.itemId === itemId));
+        setItems(goods.filter((element) => element.itemId === itemId));
         setCurrentMenu(itemId)
     };
 
@@ -52,6 +42,25 @@ const Main = () => {
         }
     }
 
+    const fetchGoods = async () => {
+        try {
+            const response = await fetch('http://localhost:3001/api/allGoods', {
+                method: 'GET',
+            })
+
+            const data = await response.json()
+            dispatch({ type: GoodsAction.type, payload: data });
+            console.log(data)
+
+        } catch (error) {
+            console.log('Error: ', error)
+        }
+    }
+
+    useEffect(() => {
+        fetchGoods()
+    }, [])
+
     useEffect(() => {
         const element = items.filter(el => el.name.toLowerCase().includes(inputValue.trim().toLowerCase()))
         setItems(element)
@@ -60,7 +69,20 @@ const Main = () => {
         }
     }, [inputValue])
 
-    console.log(userData)
+    useEffect(() => {
+        const menuCard = document
+            .querySelector(".list")
+            .querySelectorAll(".list__item");
+
+        function setMenuCardActive() {
+            menuCard.forEach((n) => n.classList.remove("active"));
+            this.classList.add("active");
+        }
+
+        menuCard.forEach((n) => n.addEventListener("click", setMenuCardActive));
+    }, [items])
+
+    console.log(goods)
 
     return (
         <main>
