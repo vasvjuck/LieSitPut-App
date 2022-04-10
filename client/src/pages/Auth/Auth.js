@@ -3,6 +3,8 @@ import './Auth.scss';
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { UserAction } from '../../store/reducer/addUserReducer'
+import { Link } from 'react-router-dom'
+
 
 const Auth = () => {
     const navigate = useNavigate();
@@ -55,6 +57,7 @@ const Auth = () => {
                     placeholder='Enter your password...' />
             </div>
             <button onClick={loginUser} type='submit'>Login</button>
+            <p className='log'>Want to SignUp?<Link to="/" className='btn'>Sign Up</Link></p>
         </form>
     )
 }
