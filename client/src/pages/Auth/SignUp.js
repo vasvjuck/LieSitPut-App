@@ -9,7 +9,7 @@ const SignUp = () => {
 
     const [username, setUserName] = useState('')
     const [password, setPassword] = useState('')
-    const [role, setRole] = useState('Admin')
+    const [role, setRole] = useState('admin')
     const [valid, setValid] = useState(false)
 
     const addUser = async (e) => {

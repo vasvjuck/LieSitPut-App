@@ -50,8 +50,7 @@ const Main = () => {
 
             const data = await response.json()
             dispatch({ type: GoodsAction.type, payload: data });
-            console.log(data)
-
+            setItems(data.filter((element) => element.itemId === 'bed01'))
         } catch (error) {
             console.log('Error: ', error)
         }
@@ -82,8 +81,6 @@ const Main = () => {
 
         menuCard.forEach((n) => n.addEventListener("click", setMenuCardActive));
     }, [items])
-
-    console.log(goods)
 
     return (
         <main>
@@ -127,16 +124,16 @@ const Main = () => {
                             <MenuItem
                                 data={data}
                                 key={data.id}
-                                isActive={data.id === "1" ? true : false}
+                                isActive={data.itemId === "bed01" ? true : false}
                             />
                         </div>))
                 }
             </div>
             <div className='mainList'>
                 {
-                    items.length ? items.map((data) => (
+                    items && items.map((data) => (
                         <ItemList userData={userData} data={data} key={data.id} />
-                    )) : (<h2>Please, choose a category</h2>)
+                    ))
                 }
             </div>
         </main>

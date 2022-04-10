@@ -39,6 +39,32 @@ app.post('/api/login', async (req, res) => {
     }
 })
 
+app.post('/api/oneGoods', async (req, res) => {
+
+    const oneGoods = await Goods.findOne({ id: req.body.id })
+
+    if (oneGoods) {
+        return res.json(oneGoods)
+    } else {
+        return res.json({ status: 'error', user: false })
+    }
+})
+
+app.put('/api/edit', async (req, res) => {
+    try {
+        const edit = await Goods.updateOne({ id: req.body.id }, {
+            $set: {
+                name: req.body.name,
+                ratings: req.body.ratings,
+                price: req.body.price
+            }
+        })
+        return res.json({ status: 'ok', edit: true })
+    } catch (error) {
+        return res.json({ status: 'error', user: false })
+    }
+})
+
 app.get('/api/allGoods', async (req, res) => {
     try {
         const goods = await Goods.find()
