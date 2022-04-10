@@ -1,4 +1,39 @@
-# Getting Started with Create React App
+    About The Project
+
+I'll start with the name of my project, as one of the tasks was: 'Find a name for your product'. This application is called LieSitPut. I'll explain a little why this name - lie in bed, sit in a armchair, put in the cupboard, hence the idea of ​​LieSitPut.
+
+A little more about the idea of ​​the application. The home page of the application is the authentication page. Depending on the role the user has chosen for authentication (admin, user), such functionality is available.
+
+The ADMIN is allowed to:
+- sort products by categories (bed, sofa, armchair, cupboard, dresser)
+- search for goods by product name
+- sort goods:
+   a) from expensive to cheaper
+   b) from cheap to expensive
+   c) by quality (from the highest quality to the lowest quality)
+- edit the product (when you click on the edit button, the admin opens the edit page). The admin can edit the product name, price, quality.
+
+The USER is allowed:
+- sort products by categories (bed, sofa, armchair, cupboard, dresser)
+- search for goods by product name
+- sort goods:
+   a) from expensive to cheaper
+   b) from cheap to expensive
+   c) by quality (from the highest quality to the lowest quality)
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +102,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
