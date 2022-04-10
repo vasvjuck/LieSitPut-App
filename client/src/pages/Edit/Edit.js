@@ -9,37 +9,39 @@ const Edit = () => {
     const product = useSelector(state => state.oneGoods.oneGoods)
 
     const [name, setName] = useState('')
-    const [ratings, setRatings] = useState('')
+    const [ratings, setRatings] = useState('5')
     const [price, setPrice] = useState('')
 
     const editProduct = async (e, id) => {
         e.preventDefault()
-        try {
-            const response = await fetch('http://localhost:3001/api/edit', {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    id,
-                    name,
-                    ratings,
-                    price
+        if (name === '' || price === '') {
+            alert('Please enter data...')
+        } else {
+            try {
+                const response = await fetch('http://localhost:3001/api/edit', {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        id,
+                        name,
+                        ratings,
+                        price
+                    })
                 })
-            })
 
-            const data = await response.json()
+                const data = await response.json()
 
-            if (data.status === 'ok') {
-                navigate('/home')
+                if (data.status === 'ok') {
+                    navigate('/home')
+                }
+            } catch (error) {
+                console.log('Error: ', error)
             }
-        } catch (error) {
-            console.log('Error: ', error)
         }
     }
 
-
-    console.log(product)
     return (
         <div className='edit'>
             <div className='edit__right'>
@@ -67,15 +69,22 @@ const Edit = () => {
                         </div>
                         <div className='content'>
                             <p>Change rating</p>
-                            <input
+                            <select
+                                className='filter'
                                 value={ratings}
                                 onChange={(e) => setRatings(e.target.value)}
-                                placeholder='Enter your new rating...'
-                            />
+                            >
+                                <option value='5'>5</option>
+                                <option value='4'>4</option>
+                                <option value='3'>3</option>
+                                <option value='2'>2</option>
+                                <option value='1'>1</option>
+                            </select>
                         </div>
                         <div className='content'>
                             <p>Change price</p>
                             <input
+                                type='number'
                                 value={price}
                                 onChange={(e) => setPrice(e.target.value)}
                                 placeholder='Enter your new price...'

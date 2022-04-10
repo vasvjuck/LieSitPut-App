@@ -40,8 +40,6 @@ const SignUp = () => {
         }
     }
 
-    console.log(role)
-
     return (
         <form className='container'>
             <h2>Sign Up</h2>

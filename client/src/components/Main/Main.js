@@ -58,7 +58,6 @@ const Main = () => {
 
     useEffect(() => {
         fetchGoods()
-        console.log(items)
     }, [])
 
     useEffect(() => {

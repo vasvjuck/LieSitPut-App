@@ -8,7 +8,6 @@ import SignUp from './pages/Auth/SignUp';
 import Edit from './pages/Edit/Edit';
 
 
-
 function App() {
 
   return (
