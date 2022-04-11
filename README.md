@@ -4,7 +4,7 @@
 
     A little more about the idea of the application. The home page of the application is the authentication page. Depending on the role the user has chosen for authentication (admin, user), such functionality is available.
 
-1.**The ADMIN is allowed to:
+1.**The ADMIN is allowed to:**
 
 - sort products by categories (bed, sofa, armchair, cupboard, dresser)
 - search for goods by product name
@@ -14,7 +14,7 @@
 3.  by quality (from the highest quality to the lowest quality)
 - edit the product (when you click on the edit button, the admin opens the edit page). The admin can edit the product name, price, quality.
 
-2.**The USER is allowed to:
+2.**The USER is allowed to:**
 
 - sort products by categories (bed, sofa, armchair, cupboard, dresser)
 - search for goods by product name
