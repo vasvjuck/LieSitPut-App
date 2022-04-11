@@ -46,7 +46,7 @@ const Auth = () => {
                 <input
                     value={username}
                     onChange={(e) => setUserName(e.target.value)}
-                    placeholder='Enter your email...' />
+                    placeholder='Enter your username...' />
             </div>
             <div className='content'>
                 <p>Password</p>
