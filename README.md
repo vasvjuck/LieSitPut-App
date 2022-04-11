@@ -4,7 +4,7 @@ I'll start with the name of my project, as one of the tasks was: 'Find a name fo
 
 A little more about the idea of the application. The home page of the application is the authentication page. Depending on the role the user has chosen for authentication (admin, user), such functionality is available.
 
-* *The ADMIN is allowed to:_ _
+* *The ADMIN is allowed to:
 
 - sort products by categories (bed, sofa, armchair, cupboard, dresser)
 - search for goods by product name
@@ -14,7 +14,7 @@ A little more about the idea of the application. The home page of the applicatio
     3. by quality (from the highest quality to the lowest quality)
 - edit the product (when you click on the edit button, the admin opens the edit page). The admin can edit the product name, price, quality.
 
-* *The USER is allowed to:_ _
+* *The USER is allowed to:
 
 - sort products by categories (bed, sofa, armchair, cupboard, dresser)
 - search for goods by product name
@@ -25,19 +25,19 @@ A little more about the idea of the application. The home page of the applicatio
 
 **Built With**
 
-    - React.js
-    - Redux
-    - Express
-    - MongoDB
-    - SCSS
+- React.js
+- Redux
+- Express
+- MongoDB
+- SCSS
 
 **Installation**
 
-    - First you need to clone the project: git clone https://github.com/vasvjuck/moonshiner-task.git
-    - Install node modules: ```npm install```
-    - Launch the client part: ```npm start```
-    - Launch the server part: ```npm run dev```
-    - In the MongoDB database in the 'goods-data' collection (it will be created automatically when the server is started), you need to insert data from the GoodsData.json (src folder).
+1. First you need to clone the project: git clone https://github.com/vasvjuck/moonshiner-task.git
+2. Install node modules: npm install
+3. Launch the client part: npm start
+4. Launch the server part: npm run dev
+5. In the MongoDB database in the 'goods-data' collection (it will be created automatically when the server is started), you need to insert data from the GoodsData.json (src folder).
 
 **How it works**
         
@@ -53,7 +53,7 @@ A little more about the idea of the application. The home page of the applicatio
 The edit page is only available to the ADMIN user.
 
 **REDUX**
-- Why I used the redux in this application. In my opinion, this is the best way to make a global state. In the '/src/store/reducer' folder you can see three reducers.
-    1. I use the first reducer (addUserReducer.js) when the user Log in. In the state I write down data about the user to use them in the Main component.
-    2. The second reducer (allGoods.js) I use when I get all the products. This state i use in the Main component
-    3. The third reducer (oneGoods.js) I use to keep one item, that the user clicked on, to update it. This you can see in the ItemList component, EDIT function. Later, I use data from this state on the EDIT page.
+- **Why I used the redux in this application**. In my opinion, this is the best way to make a global state. In the '/src/store/reducer' folder you can see three reducers.
+1. I use the first reducer (addUserReducer.js) when the user Log in. In the state I write down data about the user to use them in the Main component.
+2. The second reducer (allGoods.js) I use when I get all the products. This state i use in the Main component
+3. The third reducer (oneGoods.js) I use to keep one item, that the user clicked on, to update it. This you can see in the ItemList component, EDIT function. Later, I use data from this state on the EDIT page.
