@@ -33,11 +33,11 @@ The USER is allowed to:
 
         Installation
 
-    -First you need to clone the project: git clone https://github.com/vasvjuck/moonshiner-task.git
-    -Install node modules: npm install
-    -Launch the client part: npm start
-    -Launch the server part: npm run dev
-    -In the MongoDB database in the 'goods-data' collection (it will be created automatically when the server is started), you need to insert data from the GoodsData.json (src folder).
+    - First you need to clone the project: git clone https://github.com/vasvjuck/moonshiner-task.git
+    - Install node modules: npm install
+    - Launch the client part: npm start
+    - Launch the server part: npm run dev
+    - In the MongoDB database in the 'goods-data' collection (it will be created automatically when the server is started), you need to insert data from the GoodsData.json (src folder).
 
         How it works
 Authentication 
