@@ -1,8 +1,8 @@
 **About The Project**
 
-    I'll start with the name of my project, as one of the tasks was: 'Find a name for your product'. This application is called LieSitPut. I'll explain a little why this name - lie in bed, sit in a armchair, put in the cupboard, hence the idea of LieSitPut.
+I'll start with the name of my project, as one of the tasks was: 'Find a name for your product'. This application is called LieSitPut. I'll explain a little why this name - lie in bed, sit in a armchair, put in the cupboard, hence the idea of LieSitPut.
 
-    A little more about the idea of the application. The home page of the application is the authentication page. Depending on the role the user has chosen for authentication (admin, user), such functionality is available.
+A little more about the idea of the application. The home page of the application is the authentication page. Depending on the role the user has chosen for authentication (admin, user), such functionality is available.
 
 1.**The ADMIN is allowed to:**
 
