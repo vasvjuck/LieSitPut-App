@@ -32,7 +32,7 @@ The USER is allowed to:
 
    Installation
 
-- First you need to clone the project: git clone 
+- First you need to clone the project: git clone https://github.com/vasvjuck/moonshiner-task.git
 - Install node modules: npm install
 - Launch the client part: npm start
 - Launch the server part: npm run dev
