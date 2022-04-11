@@ -2,7 +2,7 @@
 
 I'll start with the name of my project, as one of the tasks was: 'Find a name for your product'. This application is called LieSitPut. I'll explain a little why this name - lie in bed, sit in a armchair, put in the cupboard, hence the idea of LieSitPut.
 
-A little more about the idea of the application. The home page of the application is the authentication page. Depending on the role the user has chosen for authentication (admin, user), such functionality is available.
+A little more about the idea of the application. The application offers the user a variety of furniture products. Helps to sort products by different categories and get the best deals by different options. The home page of the application is the authentication page. Depending on the role the user has chosen for authentication (admin, user), such functionality is available.
 
 1.**The ADMIN is allowed to:**
 
@@ -13,6 +13,7 @@ A little more about the idea of the application. The home page of the applicatio
 2.  from cheap to expensive 
 3.  by quality (from the highest quality to the lowest quality)
 - edit the product (when you click on the edit button, the admin opens the edit page). The admin can edit the product name, price, quality.
+- remove products
 
 2.**The USER is allowed to:**
 
@@ -48,7 +49,7 @@ A little more about the idea of the application. The home page of the applicatio
      - How to search by product name. This is also implemented using the filter method as well as the useEffect hook. The first parameter in useEffect is a callback function, in which we write filtering logic. The second parameter is the value of the input. When the input value changes, the function will be executed. So, in the function I used the filter method, in which I check whether the value of the input coincides with the name of the products. 
      - How to filter by product price and rating. This is done with the help of a select. Depending on which option the user has chosen, this condition works. Sorting is done using the sort method. (SortData function/Main.js)
 
-- **Edit page**(src/pages/Edit/Edit.js). This page is only available to users with ADMIN roles. As specified in the task, the ADMIN user can update (edit) products. So, when you click on the edit button, on the MAIN page, the user opens the EDIT page, with the corresponding product. On this page, the ADMIN user sees the current product data and can also edit them. When the ADMIN user fills the entire form with new data, then click on the EDIT button, an HTTP PUT Request is sent. In case of a successful request, the ADMIN user returns to the main page, where he sees the updated product.
+- **Edit page**(src/pages/Edit/Edit.js). This page is only available to users with ADMIN roles. As specified in the task, the ADMIN user can update (edit) products. So, when you click on the edit button, on the MAIN page, the user opens the EDIT page, with the corresponding product. On this page, the ADMIN user sees the current product data and can also edit them. When the ADMIN user fills the entire form with new data, then click on the EDIT button, a HTTP PUT Request is sent. In case of a successful request, the ADMIN user returns to the main page, where he sees the updated product. When you click on the delete button, a HTTP DELETE Request is sent, with which we delete the product in the database.
 
 The edit page is only available to the ADMIN user.
 
