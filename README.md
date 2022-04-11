@@ -13,15 +13,15 @@ The ADMIN is allowed to:
     b) from cheap to expensive 
     c) by quality (from the highest quality to the lowest quality)
 - edit the product (when you click on the edit button, the admin opens the edit page). The admin can edit the product name, price, quality.
-- 
+
 The USER is allowed to:
 
 - sort products by categories (bed, sofa, armchair, cupboard, dresser)
 - search for goods by product name
 - sort goods: 
-    a) from expensive to cheaper 
-    b) from cheap to expensive 
-    c) by quality (from the highest quality to the lowest quality)
+    - from expensive to cheaper 
+    - from cheap to expensive 
+    - by quality (from the highest quality to the lowest quality)
 
         Built With
 
@@ -40,16 +40,19 @@ The USER is allowed to:
     - In the MongoDB database in the 'goods-data' collection (it will be created automatically when the server is started), you need to insert data from the GoodsData.json (src folder).
 
         How it works
-Authentication 
-    As I said before, the home page of the application is the AUTHENTICATION page('src/pages/Auth/SignUp.js). When you click on the button(Sign Up), a HTTP POST Request is sent to the server, after which the user is added to the database (collection 'users-data'). If the response is successful, the user must Log In with the SAME username and password on the LOGIN page('src/pages/Auth/Auth.js).In case of a successful response from the server, the user is directed to the HOMEPAGE page('src/pages/Auth/Auth.js) of the application
+        
+- Authentication 
+        As I said before, the home page of the application is the AUTHENTICATION page('src/pages/Auth/SignUp.js). When you click on the button(Sign Up), a HTTP POST Request is sent to the server, after which the user is added to the database (collection 'users-data'). If the response is successful, the user must Log In with the SAME username and password on the LOGIN page('src/pages/Auth/Auth.js).In case of a successful response from the server, the user is directed to the HOMEPAGE page('src/pages/Auth/Auth.js) of the application
 
-Main page (src/components/Main/Main.js) 
-The MAIN page displays a list of products that we receive from the database. At the first render of the page, using the useEffect hook, we send a HTTP GET Request to the server, in response we receive an array of all products. After that we operate with this array, using the filter method. In this way we sort the array by category. When the user clicks on a category, the user sees the corresponding products on the page.
+- Main page (src/components/Main/Main.js) 
+        The MAIN page displays a list of products that we receive from the database. At the first render of the page, using the useEffect hook, we send a HTTP GET Request to the server, in response we receive an array of all products. After that we operate with this array, using the filter method. In this way we sort the array by category. When the user clicks on a category, the user sees the corresponding products on the page.
 
-    --- How to search by product name This is also implemented using the filter method as well as the useEffect hook. The first parameter in useEffect is a callback function, in which we write filtering logic. The second parameter is the value of the input. When the input value changes, the function will be executed. So, in the function I used the filter method, in which I check whether the value of the input coincides with the name of the products. 
-    --- How to filter by product price and rating This is done with the help of a select. Depending on which option the user has chosen, this condition works. Sorting is done using the sort method. (SortData function/Main.js)
+     - How to search by product name 
+This is also implemented using the filter method as well as the useEffect hook. The first parameter in useEffect is a callback function, in which we write filtering logic. The second parameter is the value of the input. When the input value changes, the function will be executed. So, in the function I used the filter method, in which I check whether the value of the input coincides with the name of the products. 
+     - How to filter by product price and rating This is done with the help of a select. Depending on which option the user has chosen, this condition works. Sorting is done using the sort method. (SortData function/Main.js)
 
-Edit page This page is only available to users with ADMIN roles. As specified in the task, the ADMIN user can update (edit) products. So, when you click on the edit button, on the MAIN page, the user opens the EDIT page, with the corresponding product. On this page, the ADMIN user sees the current product data and can also edit them. When the ADMIN user fills the entire form with new data, then click on the EDIT button, an HTTP PUT Request is sent. In case of a successful request, the ADMIN user returns to the main page, where he sees the updated product.
+- Edit page 
+This page is only available to users with ADMIN roles. As specified in the task, the ADMIN user can update (edit) products. So, when you click on the edit button, on the MAIN page, the user opens the EDIT page, with the corresponding product. On this page, the ADMIN user sees the current product data and can also edit them. When the ADMIN user fills the entire form with new data, then click on the EDIT button, an HTTP PUT Request is sent. In case of a successful request, the ADMIN user returns to the main page, where he sees the updated product.
 
 The edit page is only available to the ADMIN user.
 
