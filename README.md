@@ -1,8 +1,8 @@
 **About The Project**
 
-I'll start with the name of my project, as one of the tasks was: 'Find a name for your product'. This application is called LieSitPut. I'll explain a little why this name - lie in bed, sit in a armchair, put in the cupboard, hence the idea of LieSitPut.
+Let me begin with the name of my project, as one of the tasks was: 'Find a name for your product'. This application is called LieSitPut. I'll explain a little wwhat this name means - lie in a bed, sit in an armchair, put in a cupboard, hence the idea of LieSitPut.
 
-A little more about the idea of the application. The application offers the user a variety of furniture products. Helps to sort products by different categories and get the best deals by different options. The home page of the application is the authentication page. Depending on the role the user has chosen for authentication (admin, user), such functionality is available.
+A little bit more about the idea of the application. The application offers the user a variety of furniture products, helps to sort products by different categories and get the best deals by different options. The home page of the application is the authentication page. The functionality I've created allows users to choose a role for an authentication: user or admin
 
 1.**The ADMIN is allowed to:**
 
@@ -12,7 +12,7 @@ A little more about the idea of the application. The application offers the user
 1.  from expensive to cheaper 
 2.  from cheap to expensive 
 3.  by quality (from the highest quality to the lowest quality)
-- edit the product (when you click on the edit button, the admin opens the edit page). The admin can edit the product name, price, quality.
+- edit the product (when ADMIN clicks on the edit button, the edit page opens). The admin can change the product name, price, quality.
 - remove products
 
 2.**The USER is allowed to:**
@@ -42,7 +42,7 @@ A little more about the idea of the application. The application offers the user
 
 **How it works**
         
-- **Authentication**. As I said before, the home page of the application is the AUTHENTICATION page('src/pages/Auth/SignUp.js). When you click on the button(Sign Up), a HTTP POST Request is sent to the server, after which the user is added to the database (collection 'users-data'). If the response is successful, the user must Log In with the SAME username and password on the LOGIN page('src/pages/Auth/Auth.js).In case of a successful response from the server, the user is directed to the HOMEPAGE page('src/pages/Auth/Auth.js) of the application
+- **Authentication**. As I said before, the home page of the application is the AUTHENTICATION page('src/pages/Auth/SignUp.js). When you click on the button(Sign Up), a HTTP POST Request is sent to the server, after which the user is added to the database (collection 'users-data'). If the response is successful, the user must Log In with the SAME username and password on the LOGIN page('src/pages/Auth/Auth.js).In case of a successful response from the server, the user is directed to the HOMEPAGE('src/pages/Auth/Auth.js) of the application.
 
 - **Main page** (src/components/Main/Main.js). The MAIN page displays a list of products that we receive from the database. At the first render of the page, using the useEffect hook, we send a HTTP GET Request to the server, in response we receive an array of all products. After that we operate with this array, using the filter method. In this way we sort the array by category. When the user clicks on a category, the user sees the corresponding products on the page.
 
@@ -56,5 +56,5 @@ The edit page is only available to the ADMIN user.
 **REDUX**
 - **Why I used the redux in this application**. In my opinion, this is the best way to make a global state. In the '/src/store/reducer' folder you can see three reducers.
 1. I use the first reducer (addUserReducer.js) when the user Log in. In the state I write down data about the user to use them in the Main component.
-2. The second reducer (allGoods.js) I use when I get all the products. This state i use in the Main component
-3. The third reducer (oneGoods.js) I use to keep one item, that the user clicked on, to update it. This you can see in the ItemList component, EDIT function. Later, I use data from this state on the EDIT page.
+2. The second reducer (allGoods.js) I use when I get all the products. This state I use in the Main component.
+3. The third reducer (oneGoods.js) I use to keep one item, that the user clicked on, to update it. You can see this in the ItemList component, EDIT function. Later, I use data from this state on the EDIT page.
