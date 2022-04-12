@@ -72,25 +72,35 @@
         .btn_block {
             display: flex;
             align-items: center;
-            justify-content: center;
-            flex-direction: column;
+            justify-content: space-between;
 
-            .btn {
-                margin-top: 30px;
-                padding: 10px 119px;
-                background-color: #000;
-                color: #fff;
-                border-radius: 24px;
-                transition: all linear 0.2s;
 
-                &.one {
-                    padding: 10px 106px;
-                }
+        }
 
-                &:hover {
-                    transition: 0.5;
-                    transform: scale(1.1);
-                }
+        .btn {
+            margin-top: 30px;
+            padding: 10px 65px;
+            background-color: #000;
+            color: #fff;
+            border-radius: 24px;
+            transition: all linear 0.2s;
+            margin-right: 15px;
+
+            &.delete {
+                padding: 10px 65px;
+                background-color: #fff;
+                color: #000;
+                margin-right: 0;
+            }
+
+            &.one {
+                padding: 10px 106px;
+                margin-right: 0;
+            }
+
+            &:hover {
+                transition: 0.5;
+                transform: scale(1.1);
             }
         }
     }

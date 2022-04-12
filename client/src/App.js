@@ -12,18 +12,19 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <div className='container'>
-        <Router>
+      <Router>
+        <Header />
+        <div className='container'>
           <Routes>
+            <Route path="/" element={<SignUp />} />
             <Route path="/" element={<SignUp />} />
             <Route path="/login" element={<Auth />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/edit" element={<Edit />} />
           </Routes>
-        </Router>
-      </div>
-    </div>
+        </div>
+      </Router>
+    </div >
   );
 }
 

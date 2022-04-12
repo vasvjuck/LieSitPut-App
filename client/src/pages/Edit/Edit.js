@@ -42,6 +42,28 @@ const Edit = () => {
         }
     }
 
+    const deleteProduct = async (e, id) => {
+        e.preventDefault()
+        try {
+            const response = await fetch('http://localhost:3001/api/delete', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id,
+                })
+            })
+
+            const data = await response.json()
+
+            if (data.status === 'ok') {
+                navigate('/home')
+            }
+        } catch (error) {
+            console.log('Error: ', error)
+        }
+    }
     return (
         <div className='edit'>
             <div className='edit__right'>
@@ -92,8 +114,11 @@ const Edit = () => {
                         </div>
                         <div className='btn_block'>
                             <button className='btn' onClick={(e) => editProduct(e, product.id)}>Edit</button>
-                            <Link to="/home" className='btn one'>Go back</Link>
+                            <button className='btn delete' onClick={(e) => deleteProduct(e, product.id)}>Delete</button>
+
+
                         </div>
+                        <Link to="/home" className='btn one'>Go back</Link>
                     </div>
                 </form>
             </div>

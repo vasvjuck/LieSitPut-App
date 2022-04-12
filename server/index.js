@@ -74,6 +74,17 @@ app.get('/api/allGoods', async (req, res) => {
     }
 })
 
+app.delete('/api/delete', async (req, res) => {
+    try {
+        const oneGoods = await Goods.findOne({ id: req.body.id })
+        await oneGoods.remove()
+
+        return res.json({ status: 'ok' })
+    } catch (error) {
+        return res.json({ status: 'error' })
+    }
+})
+
 app.listen(3001, () => {
     console.log('Server started')
 })
