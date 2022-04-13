@@ -1,6 +1,6 @@
 **About The Project**
 
-Let me begin with the name of my project, as one of the tasks was: 'Find a name for your product'. This application is called LieSitPut. I'll explain a little wwhat this name means - lie in a bed, sit in an armchair, put in a cupboard, hence the idea of LieSitPut.
+Let me begin with the name of my project, as one of the tasks was: 'Find a name for your product'. This application is called LieSitPut. I'll explain a little what this name means - lie in a bed, sit in an armchair, put in a cupboard, hence the idea of LieSitPut.
 
 A little bit more about the idea of the application. The application offers the user a variety of furniture products, helps to sort products by different categories and get the best deals by different options. The home page of the application is the authentication page. The functionality I've created allows users to choose a role for an authentication: user or admin
 
