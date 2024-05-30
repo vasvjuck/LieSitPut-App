@@ -34,7 +34,7 @@ A little bit more about the idea of the application. The application offers the 
 
 **Installation**
 
-1. First you need to clone the project: git clone https://github.com/vasvjuck/moonshiner-task.git
+1. First you need to clone the project: git clone https://github.com/vasvjuck/LieSitPut-App.git
 2. Install node modules: npm install
 3. Launch the client part: npm start
 4. Launch the server part: npm run dev
